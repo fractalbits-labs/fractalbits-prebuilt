@@ -1,12 +1,12 @@
 {
-  "build_time": "2026-06-04T11:39:29Z",
+  "build_time": "2026-06-04T15:48:54Z",
   "repos": {
     ".": {
-      "commit": "0f2236cf",
+      "commit": "a0386f8b",
       "branch": "main"
     },
     "core": {
-      "commit": "6de2855",
+      "commit": "ac813cd",
       "branch": "main"
     },
     "crates/ha": {
@@ -19,6 +19,10 @@
     },
     "misc": {
       "commit": "0ba1924",
+      "branch": "main"
+    },
+    "ui": {
+      "commit": "377c62b",
       "branch": "main"
     }
   }

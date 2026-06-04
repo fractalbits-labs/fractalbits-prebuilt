@@ -1,0 +1,70 @@
+name: Prune history
+
+# Keeps only the most recent $KEEP commits on main. Runs after every push
+# (GITHUB_TOKEN pushes don't re-trigger workflows, so the force-push won't loop)
+# and is also exposed via workflow_dispatch for manual runs.
+#
+# Note: pruning rewrites the kept commits' SHAs because their parent chain
+# changes. Don't rely on prebuilt commit SHAs as stable external references.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      keep:
+        description: "Number of recent commits to keep"
+        required: false
+        default: "5"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: prune-history
+  cancel-in-progress: false
+
+jobs:
+  prune:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Prune to last N commits
+        env:
+          KEEP: ${{ github.event.inputs.keep || '5' }}
+        run: |
+          set -euo pipefail
+
+          total=$(git rev-list --count HEAD)
+          echo "Total commits: $total (keep: $KEEP)"
+          if [ "$total" -le "$KEEP" ]; then
+            echo "Nothing to prune."
+            exit 0
+          fi
+
+          # Recreate the most recent $KEEP commits as a fresh chain whose
+          # oldest commit has no parent. Trees and messages are preserved
+          # verbatim; only the parent links (and therefore the SHAs) change.
+          shas=$(git rev-list --reverse HEAD | tail -n "$KEEP")
+          parent=""
+          for sha in $shas; do
+            tree=$(git rev-parse "$sha^{tree}")
+            msg=$(git log -1 --format=%B "$sha")
+            args=("$tree")
+            [ -n "$parent" ] && args+=(-p "$parent")
+            new=$(GIT_AUTHOR_NAME="$(git log -1 --format=%an "$sha")" \
+                  GIT_AUTHOR_EMAIL="$(git log -1 --format=%ae "$sha")" \
+                  GIT_AUTHOR_DATE="$(git log -1 --format=%aI "$sha")" \
+                  GIT_COMMITTER_NAME="$(git log -1 --format=%cn "$sha")" \
+                  GIT_COMMITTER_EMAIL="$(git log -1 --format=%ce "$sha")" \
+                  GIT_COMMITTER_DATE="$(git log -1 --format=%cI "$sha")" \
+                  git commit-tree "${args[@]}" -m "$msg")
+            parent=$new
+          done
+
+          git update-ref refs/heads/main "$parent"
+          git push --force-with-lease origin main

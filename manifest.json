@@ -1,24 +1,24 @@
 {
-  "build_time": "2026-06-04T15:48:54Z",
+  "build_time": "2026-06-29T05:18:33Z",
   "repos": {
     ".": {
-      "commit": "a0386f8b",
+      "commit": "cb6974ad",
       "branch": "main"
     },
     "core": {
-      "commit": "ac813cd",
+      "commit": "a83e76f",
       "branch": "main"
     },
     "crates/ha": {
-      "commit": "d25882d",
+      "commit": "502c2ed",
       "branch": "main"
     },
     "crates/root_server": {
-      "commit": "5cf70be",
+      "commit": "4c8dfff",
       "branch": "main"
     },
     "misc": {
-      "commit": "0ba1924",
+      "commit": "450a906",
       "branch": "main"
     },
     "ui": {

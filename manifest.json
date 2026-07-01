@@ -1,0 +1,29 @@
+{
+  "build_time": "2026-07-01T12:26:11Z",
+  "repos": {
+    ".": {
+      "commit": "db76c5e0",
+      "branch": "posix-fs-base"
+    },
+    "core": {
+      "commit": "dd26c13",
+      "branch": "main"
+    },
+    "crates/ha": {
+      "commit": "b0ce02c",
+      "branch": "main"
+    },
+    "crates/root_server": {
+      "commit": "4c8dfff",
+      "branch": "main"
+    },
+    "misc": {
+      "commit": "6afbcb7",
+      "branch": "main"
+    },
+    "ui": {
+      "commit": "377c62b",
+      "branch": "main"
+    }
+  }
+}

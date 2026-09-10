@@ -1,9 +1,9 @@
 {
-  "build_time": "2026-09-10T00:13:13Z",
+  "build_time": "2026-09-10T17:57:01Z",
   "repos": {
     ".": {
-      "commit": "00b0618d",
-      "branch": "block-version-map-v2"
+      "commit": "67e8ec67",
+      "branch": "s3-gateway-rename"
     },
     "core": {
       "commit": "e4ca820",
@@ -18,8 +18,8 @@
       "branch": "main"
     },
     "misc": {
-      "commit": "2a6fbaf",
-      "branch": "main"
+      "commit": "db62a64",
+      "branch": "s3-gateway-rename"
     }
   }
 }

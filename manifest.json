@@ -1,9 +1,9 @@
 {
-  "build_time": "2026-09-10T17:57:01Z",
+  "build_time": "2026-09-10T19:13:46Z",
   "repos": {
     ".": {
-      "commit": "67e8ec67",
-      "branch": "s3-gateway-rename"
+      "commit": "4a7471ca",
+      "branch": "drop-x86-cpu-targets"
     },
     "core": {
       "commit": "e4ca820",
@@ -19,7 +19,7 @@
     },
     "misc": {
       "commit": "db62a64",
-      "branch": "s3-gateway-rename"
+      "branch": "main"
     }
   }
 }

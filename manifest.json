@@ -1,9 +1,9 @@
 {
-  "build_time": "2026-09-10T19:13:46Z",
+  "build_time": "2026-09-11T18:37:43Z",
   "repos": {
     ".": {
-      "commit": "4a7471ca",
-      "branch": "drop-x86-cpu-targets"
+      "commit": "4b209d93",
+      "branch": "main"
     },
     "core": {
       "commit": "e4ca820",
@@ -14,11 +14,11 @@
       "branch": "main"
     },
     "crates/root_server": {
-      "commit": "f9a7a42",
+      "commit": "872a6df",
       "branch": "main"
     },
     "misc": {
-      "commit": "db62a64",
+      "commit": "f9a2175",
       "branch": "main"
     }
   }

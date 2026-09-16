@@ -1,8 +1,8 @@
 {
-  "build_time": "2026-09-16T22:14:38Z",
+  "build_time": "2026-09-16T23:51:58Z",
   "repos": {
     ".": {
-      "commit": "5708cd63",
+      "commit": "d105b596",
       "branch": "drive-crud"
     },
     "core": {
@@ -14,11 +14,11 @@
       "branch": "main"
     },
     "crates/root_server": {
-      "commit": "93c1be5",
-      "branch": "drive-crud"
+      "commit": "6e62f19",
+      "branch": "main"
     },
     "misc": {
-      "commit": "0849008",
+      "commit": "de43c7f",
       "branch": "main"
     }
   }

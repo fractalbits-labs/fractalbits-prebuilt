@@ -1,16 +1,20 @@
 {
-  "build_time": "2026-09-17T17:08:00Z",
+  "build_time": "2026-09-18T23:28:32Z",
   "repos": {
     ".": {
-      "commit": "b30a365c",
+      "commit": "34f86336",
       "branch": "main"
     },
     "core": {
       "commit": "2b49b5d",
       "branch": "main"
     },
+    "crates/fs": {
+      "commit": "24d7fba",
+      "branch": "main"
+    },
     "crates/ha": {
-      "commit": "20e8fec",
+      "commit": "85f732f",
       "branch": "main"
     },
     "crates/root_server": {
